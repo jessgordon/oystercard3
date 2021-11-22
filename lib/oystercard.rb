@@ -14,6 +14,7 @@ class Oystercard
   end
 
   def deduct
+    # Walkthrough has used deduct(amount)
     @balance -= FARE
   end
 
