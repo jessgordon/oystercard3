@@ -17,4 +17,12 @@ on the new card call the method top_up in order to envoke the top up value and w
 
 We would hope the balance of the card would increase by that amount. (but it won't)
 
+# Testing limit plan
+
+Create a new class instance of Oystercard
+
+top_up with 20 then top_up with 80
+
+expect to raise an error
+
 
