@@ -25,4 +25,16 @@ top_up with 20 then top_up with 80
 
 expect to raise an error
 
+# Testing deduct method
+
+Create a new class instance of Oystercard
+
+top_up with 50.
+
+call the method deduct on the new class instance.
+
+hope to see a deduction of a certain value from the balance.
+
+(This will fail)
+
 

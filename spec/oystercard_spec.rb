@@ -18,4 +18,10 @@ describe Oystercard do
 
   end
 
+  describe '#deduct' do 
+    it 'should deduct the balance by a specified value' do 
+      expect{ subject.deduct }.to change{ subject.balance }.by -Oystercard::FARE
+    end
+  end
+
 end
