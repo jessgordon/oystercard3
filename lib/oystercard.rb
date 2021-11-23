@@ -1,9 +1,11 @@
 class Oystercard
-  attr_reader :balance
+  attr_reader :balance, :in_journey
   TOP_UP_LIMIT = 90
   FARE = 6
+  
   def initialize
     @balance = 0
+    @in_journey = false
   end
 
   def top_up(amount)
@@ -16,6 +18,18 @@ class Oystercard
   def deduct
     # Walkthrough has used deduct(amount)
     @balance -= FARE
+  end
+
+  def touch_in
+    @in_journey = true
+  end
+
+#   def in_journey?
+#     true
+#   end
+
+  def touch_out
+    @in_journey = false
   end
 
   private

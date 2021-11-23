@@ -20,8 +20,23 @@ describe Oystercard do
 
   describe '#deduct' do 
     it 'should deduct the balance by a specified value' do 
-      expect{ subject.deduct }.to change{ subject.balance }.by -Oystercard::FARE
+      expect { subject.deduct }.to change { subject.balance }.by -Oystercard::FARE
     end
+  end
+
+  describe '#touch_in' do
+      it 'should result in_journey to return true' do
+        subject.touch_in
+          expect(subject.in_journey).to be_truthy
+      end
+    end
+
+    describe '#touch_out' do
+      it 'should result in_journey to return false when we touch_out' do
+        subject.touch_out
+        expect(subject.in_journey).to be_falsey
+      end
+
   end
 
 end

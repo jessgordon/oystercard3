@@ -37,4 +37,12 @@ hope to see a deduction of a certain value from the balance.
 
 (This will fail)
 
+# Touch-in and Touch-out plan
+
+Create an instance of Oystercard
+
+When we apply method touch_in, we expect in_journey? to be true.
+
+When we apply method touch_out, we expect in_journey? to be false.
+
 
