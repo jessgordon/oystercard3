@@ -16,11 +16,6 @@ class Oystercard
     @balance += amount
   end
 
-  def deduct
-    # Walkthrough has used deduct(amount)
-    @balance -= FARE
-  end
-
   def touch_in
     fail "Insufficient balance to touch in" if insufficient_funds?
     @in_journey = true
@@ -28,6 +23,7 @@ class Oystercard
 
   def touch_out
     @in_journey = false
+    self.deduct
   end
 
   private
@@ -38,6 +34,11 @@ class Oystercard
 
   def insufficient_funds?
     @balance < MINIMUM_BALANCE  
+  end
+
+  def deduct
+    # Walkthrough has used deduct(amount)
+    @balance -= FARE
   end
 
 end

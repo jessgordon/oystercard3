@@ -53,4 +53,17 @@ Call the method touch_in immediately when the balance is 0.
 
 Expect this to raise an error for not having the min balance of £1.
 
+# Charge on touch out plan
+
+Create an instance of Oystercard
+
+top_up Oystercard above the minimum balance
+
+touch_in
+
+touch_out
+
+We expect the balance to reduce by the fare amount
+
+
 

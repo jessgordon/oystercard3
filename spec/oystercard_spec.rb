@@ -18,12 +18,6 @@ describe Oystercard do
 
   end
 
-  describe '#deduct' do 
-    it 'should deduct the balance by a specified value' do 
-      expect { subject.deduct }.to change { subject.balance }.by -Oystercard::FARE
-    end
-  end
-
   describe '#touch_in' do
       it 'should result in_journey to return true if balance is more than or equal to £1 (minimum balance)' do
         subject.top_up(Oystercard::MINIMUM_BALANCE)
@@ -42,6 +36,10 @@ describe Oystercard do
         expect(subject.in_journey).to be_falsey
       end
 
-  end
+      it 'balance should reduce by fare amount' do
+          expect { subject.touch_out }.to change { subject.balance }.by(-Oystercard::FARE)
+      end
+
+    end
 
 end
