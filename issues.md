@@ -45,4 +45,12 @@ When we apply method touch_in, we expect in_journey? to be true.
 
 When we apply method touch_out, we expect in_journey? to be false.
 
+# Checking min balance on touch_in plan
+
+Create an instance of Oystercard
+
+Call the method touch_in immediately when the balance is 0. 
+
+Expect this to raise an error for not having the min balance of £1.
+
 

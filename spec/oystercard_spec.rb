@@ -25,9 +25,14 @@ describe Oystercard do
   end
 
   describe '#touch_in' do
-      it 'should result in_journey to return true' do
+      it 'should result in_journey to return true if balance is more than or equal to £1 (minimum balance)' do
+        subject.top_up(Oystercard::MINIMUM_BALANCE)
         subject.touch_in
-          expect(subject.in_journey).to be_truthy
+        expect(subject.in_journey).to be_truthy
+      end
+
+      it 'card should not be able to touch_in if balance is less than £1 (minimum balance)' do 
+        expect { subject.touch_in }.to raise_error "Insufficient balance to touch in"
       end
     end
 
