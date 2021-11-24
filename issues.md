@@ -65,5 +65,13 @@ touch_out
 
 We expect the balance to reduce by the fare amount
 
+# Saving entry station plan
 
+Create an instance of Oystercard
+
+top_up Oystercard above the minimum balance
+
+Call touch_in with an argument entry station
+
+Calling the method entry_station will return entry station
 
