@@ -75,3 +75,21 @@ Call touch_in with an argument entry station
 
 Calling the method entry_station will return entry station
 
+# Journey history plan 
+
+Create an instance of oystercard
+
+top up oystercard above min balance
+
+call journey_history 
+
+expect it to be empty
+
+call touch_in with arg entry station
+
+call touch_out with arg exit station
+
+call journey_history 
+
+expect to see a list of all prev journeys 
+
