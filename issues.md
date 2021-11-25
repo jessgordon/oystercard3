@@ -93,3 +93,11 @@ call journey_history
 
 expect to see a list of all prev journeys 
 
+# Creating the Station class plan
+
+Create an instance of the class Station
+
+Call station.name and expect the name to be returned
+
+Call station.zone and expect the zone to be returned
+
