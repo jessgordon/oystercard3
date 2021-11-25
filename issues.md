@@ -101,3 +101,31 @@ Call station.name and expect the name to be returned
 
 Call station.zone and expect the zone to be returned
 
+# Handling a journey without a touch in or touch out
+
+Create an instance of the class Oystercard
+
+top_up oystercard above min balance
+
+touch_in with arg entry station
+
+Expect this to create an instance of the class Journey
+
+Expect journey.in_journey? to be true
+
+Expect journey.entry_station to be equal to entry station
+
+Expect journey.complete? to be false
+
+Expect journey.fare to eq penalty charge
+
+touch_out with arg exit station
+
+Expect journey.in_journey? to be false
+
+Expect journey.exit_station to be equal to exit station
+
+Expect journey.complete? to be true 
+
+Expect journey.fare to eq minimum fare
+

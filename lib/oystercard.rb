@@ -32,10 +32,6 @@ class Oystercard
     @journey_history[current_journey_index][:exit_station] = station
   end
 
-  def in_journey?
-    @entry_station.nil? ? false : true
-  end
-
   private
 
   def limit_exceeded?(amount)
