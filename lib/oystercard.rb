@@ -29,7 +29,11 @@ class Oystercard
     deduct
     @entry_station = nil
     @exit_station = station
-    @journey_history[current_journey_index][:exit_station] = station
+    @journey_history[-1][:exit_station] = station
+  end
+
+  def in_journey?
+    @entry_station.nil? ? false : true
   end
 
   private
@@ -45,9 +49,5 @@ class Oystercard
   def deduct
     # Walkthrough has used deduct(amount)
     @balance -= FARE
-  end
-
-  def current_journey_index
-    @journey_history.length - 1
   end
 end
