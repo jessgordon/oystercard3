@@ -1,11 +1,11 @@
 require_relative 'journey'
 
 class Oystercard
-  attr_reader :balance, :journey_history, :entry_station, :exit_station, :journey
+  attr_reader :balance, :journey_history, :journey
 
   TOP_UP_LIMIT = 90
   MINIMUM_BALANCE = 1
-  FARE = 6
+  FARE = 1
 
   def initialize
     @balance = 0
@@ -14,29 +14,25 @@ class Oystercard
 
   def top_up(amount)
     raise "top-up limit of £#{TOP_UP_LIMIT} reached" if limit_exceeded?(amount)
-
-    # the output in irb reads: "top-up limit of \xC2\xA390 reached (RuntimeError)"
-    # puts works?
     @balance += amount
   end
 
   def touch_in(station)
     raise 'Insufficient balance to touch in' if insufficient_funds?
+    deduct if @journey != nil
     @journey = Journey.new(station)
-    # @entry_station = station
-    # @journey_history << { entry_station: station }
   end
 
   def touch_out(station)
-    deduct
+    @journey = Journey.new if @journey == nil
     @journey.finish(station)
-    # @entry_station = nil
-    # @exit_station = station
-    # @journey_history[-1][:exit_station] = station
-  end
 
-  def in_journey?
-    @entry_station.nil? ? false : true
+    @journey_history << { 
+      entry_station: @journey.entry_station,
+      exit_station: @journey.exit_station
+    }
+    deduct
+    @journey = nil
   end
 
   private
@@ -50,7 +46,6 @@ class Oystercard
   end
 
   def deduct
-    # Walkthrough has used deduct(amount)
-    @balance -= FARE
+    @balance -= @journey.fare
   end
 end

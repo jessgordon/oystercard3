@@ -28,16 +28,8 @@ describe Oystercard do
   end
 
   describe '#touch_in' do
-    it 'should result in_journey to return true if balance is more than or equal to £1 (minimum balance)' do
-      expect(subject.in_journey?).to be_truthy
-    end
-
     it 'card should not be able to touch_in if balance is less than £1 (minimum balance)', :skip_top_up_touch_in do
       expect { subject.touch_in(start_station) }.to raise_error 'Insufficient balance to touch in'
-    end
-
-    it 'returns the entry station when we call the method entry_station' do
-      expect(subject.entry_station).to eq(start_station)
     end
   end
 
@@ -46,20 +38,12 @@ describe Oystercard do
       subject.touch_out(end_station) unless test.metadata[:skip_touch_out]
     end
 
-    it 'should result in_journey to return false when we touch_out' do
-      expect(subject.in_journey?).to be_falsey
-    end
-
     it 'balance should reduce by fare amount', :skip_touch_out do
       expect { subject.touch_out(end_station) }.to change { subject.balance }.by(-Oystercard::FARE)
     end
 
-    it 'should forget the entry station' do
-      expect(subject.entry_station).to be_nil
-    end
-
-    it 'returns the exit station when we call exit_station' do
-      expect(subject.exit_station).to eq end_station
+    it 'should forget the journey instance' do
+      expect(subject.journey).to be_nil
     end
   end
 
