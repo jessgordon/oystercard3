@@ -1,60 +1,39 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jessgordon/Projects/week2/Oystercard2/spec/journey_spec.rb": {
+      "/Users/tomasgarciamusic/Desktop/Makers/Week_2/oystercard3/spec/journey_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          3,
+          2,
           1,
-          null,
+          1,
           1,
           1,
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           null
         ]
       },
-      "/Users/jessgordon/Projects/week2/Oystercard2/lib/journey.rb": {
+      "/Users/tomasgarciamusic/Desktop/Makers/Week_2/oystercard3/lib/journey.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           1,
+          2,
           null,
           null,
           1,
@@ -63,7 +42,7 @@
           null
         ]
       },
-      "/Users/jessgordon/Projects/week2/Oystercard2/lib/oystercard.rb": {
+      "/Users/tomasgarciamusic/Desktop/Makers/Week_2/oystercard3/lib/oystercard.rb": {
         "lines": [
           1,
           1,
@@ -100,6 +79,10 @@
           null,
           null,
           1,
+          2,
+          null,
+          null,
+          1,
           null,
           1,
           13,
@@ -113,14 +96,10 @@
           null,
           7,
           null,
-          null,
-          1,
-          7,
-          null,
           null
         ]
       },
-      "/Users/jessgordon/Projects/week2/Oystercard2/spec/oystercard_spec.rb": {
+      "/Users/tomasgarciamusic/Desktop/Makers/Week_2/oystercard3/spec/oystercard_spec.rb": {
         "lines": [
           1,
           null,
@@ -209,7 +188,7 @@
           null
         ]
       },
-      "/Users/jessgordon/Projects/week2/Oystercard2/spec/station_spec.rb": {
+      "/Users/tomasgarciamusic/Desktop/Makers/Week_2/oystercard3/spec/station_spec.rb": {
         "lines": [
           1,
           null,
@@ -226,7 +205,7 @@
           null
         ]
       },
-      "/Users/jessgordon/Projects/week2/Oystercard2/lib/station.rb": {
+      "/Users/tomasgarciamusic/Desktop/Makers/Week_2/oystercard3/lib/station.rb": {
         "lines": [
           1,
           1,
@@ -239,6 +218,6 @@
         ]
       }
     },
-    "timestamp": 1637863147
+    "timestamp": 1637943671
   }
 }
